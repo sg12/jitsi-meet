@@ -26,7 +26,8 @@ COPY . .
 RUN npm install
 
 # Открываем порт 80
-EXPOSE 80
+EXPOSE 8080
+EXPOSE 8443
 
 # Сборка проекта
 CMD [ "npm", "run", "start" ]
