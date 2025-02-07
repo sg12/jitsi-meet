@@ -1,5 +1,5 @@
 # Используем базовый образ с Node.js и необходимыми инструментами
-FROM node:18-bullseye
+FROM node:22-bullseye
 
 # Установка необходимых пакетов
 RUN apt-get update && apt-get install -y \
