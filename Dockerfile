@@ -25,15 +25,16 @@ COPY . .
 # Устанавливаем зависимости проекта
 RUN npm install
 
+# Открываем порт 80
+EXPOSE 80
+
 # Сборка проекта
-RUN npm run start
+CMD [ "npm", "run", "start" ]
 
 # # Настраиваем NGINX для обслуживания статических файлов
 # RUN rm -rf /var/www/html/* \
 #     && cp -r build/* /var/www/html/
 
-# Открываем порт 80
-EXPOSE 80
-
-# Запуск NGINX
-CMD ["nginx", "-g", "daemon off;"]
+#Убрал, так как мешает дальнейшему доступу к контейнеру, думаю как грамотнее исправить
+# # Запуск NGINX
+# CMD ["nginx", "-g", "daemon off;"]
